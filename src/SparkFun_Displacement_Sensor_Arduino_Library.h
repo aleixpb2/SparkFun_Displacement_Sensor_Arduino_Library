@@ -144,5 +144,9 @@ private:
   bool calibrate(uint8_t ads_calibration_step, uint8_t degrees); //Set the four calibration points: zero, right on x, right on y, save to NVM
 
   inline int16_t ads_int16_decode(const uint8_t *p_encoded_data); //Convert two bytes of buffer[] to int16
+
+  // filter variables
+  float filter_samples[2][6];
+  float prev_sample[2];
 };
 #endif
